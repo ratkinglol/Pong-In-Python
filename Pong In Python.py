@@ -1,13 +1,15 @@
 # made by ratkinglol 
 # to my friends, made by Kasen
 # Hey Alex or Kyler, you're the only two friends I have who would think of using this lmao anyways, here it is...
+# Also this works on Visual Studio Code, I don't know about others.
+# It WILL NOT work on normal python of course
 import turtle
 import time
 import random
 
 # Set up the game window
 win = turtle.Screen()
-win.title("Pong")
+win.title("Pong By ratkinglol")
 win.bgcolor("black")
 win.setup(width=600, height=400)
 

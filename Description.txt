@@ -1,1 +1,4 @@
-It's literally what the title says, it's pong in Python using Turtle. Pretty self explanatory.
+It's literally what the title says, it's pong in Python... using Turtle. Pretty self explanatory. 
+Also I don't think anyone is actually gonna use this. 
+It's pretty simple.
+meh.

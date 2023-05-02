@@ -6,6 +6,8 @@
 import turtle
 import time
 import random
+import math
+
 
 # Set up the game window
 win = turtle.Screen()
@@ -88,12 +90,7 @@ while True:
     ball.sety(ball.ycor() + ball.dy)
 
     # Check for collision with top/bottom walls
-    if ball.ycor() > 190:
-        ball.sety(190)
-        ball.dy *= -1
-
-    if ball.ycor() < -190:
-        ball.sety(-190)
+    if ball.ycor() > 190 or ball.ycor() < -190:
         ball.dy *= -1
 
     # Check for collision with left/right walls
@@ -104,12 +101,19 @@ while True:
         ball.goto(0, 0)
         ball.dx = -3
         ball.dy = random.uniform(-3, 3)
-
-    if ball.xcor() < -290:
+    elif ball.xcor() < -290:
         score_b += 1
         score.clear()
         score.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 18, "normal"))
         ball.goto(0, 0)
         ball.dx = 3
         ball.dy = random.uniform(-3, 3)
+
+    # Check for collision with paddles
+    if ball.dx > 0 and ball.distance(paddle_b) < 40:
+        ball.setx(240)
+        ball.dx *= -1
+    elif ball.dx < 0 and ball.distance(paddle_a) < 40:
+        ball.setx(-240)
+        ball.dx *= -1
 

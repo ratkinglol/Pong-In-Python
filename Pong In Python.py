@@ -1,8 +1,7 @@
 # made by ratkinglol 
-# to my friends, made by Kasen
+# to my friends, made by Kasen F
 # Hey Alex or Kyler, you're the only two friends I have who would think of using this lmao anyways, here it is...
 # Also this works on Visual Studio Code, I don't know about others.
-# It WILL NOT work on normal python of course
 import turtle
 import time
 import random
@@ -84,15 +83,12 @@ win.onkeypress(paddle_b_down, "Down")
 # Main game loop
 while True:
     win.update()
-
     # Move the ball
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
-
     # Check for collision with top/bottom walls
     if ball.ycor() > 190 or ball.ycor() < -190:
         ball.dy *= -1
-
     # Check for collision with left/right walls
     if ball.xcor() > 290:
         score_a += 1
@@ -108,7 +104,6 @@ while True:
         ball.goto(0, 0)
         ball.dx = 3
         ball.dy = random.uniform(-3, 3)
-
     # Check for collision with paddles
     if ball.dx > 0 and ball.distance(paddle_b) < 40:
         ball.setx(240)
